@@ -8,6 +8,11 @@
 
 ---
 
+<p align="center" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+  <img src="screenshot/screenshot_2026_5_27%2017-31-31.png" alt="工作项看板预览" width="640" />
+  <img src="screenshot/screenshot_2026_5_27%2017-34-40.png" alt="工作项看板预览" width="640" />
+</p>
+
 ## 功能清单
 
 ### 看板与工作项管理
@@ -45,6 +50,24 @@
 ---
 
 ## 技术栈
+
+<p align="center">
+  <img src="public/claude-code.svg" alt="Claude Code" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/codex.svg" alt="Codex" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/model-context-protocol.svg" alt="model-context-protocol" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/nextdotjs.svg" alt="Next.js" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/typescript.svg" alt="TypeScript" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/tailwind-css.svg" alt="TailwindCSS" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/shadcn-ui.svg" alt="shadcn/ui" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/motion.svg" alt="Motion" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/sqlite.svg" alt="SQLite" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/prisma.svg" alt="Prisma" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/zod.svg" alt="Zod" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/lucide.svg" alt="Lucide" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/vitest.svg" alt="Vitest" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/playwright.svg" alt="Playwright" width="36" height="36" />&nbsp;&nbsp;
+  <img src="public/docker.svg" alt="Docker" width="36" height="36" />
+</p>
 
 | 层级     | 选型                      | 说明                  |
 | -------- | ------------------------- | --------------------- |
