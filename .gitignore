@@ -4,8 +4,5 @@ node_modules
 # Playwright
 playwright/.cache/
 
-# Dev artifacts
-next-env.d.ts
-
 # Lock files (use npm)
 pnpm-lock.yaml
