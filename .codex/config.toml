@@ -1,0 +1,9 @@
+[mcp_servers.playwright]
+args = [
+    "@playwright/mcp",
+    "--headless",
+    "--browser",
+    "chromium",
+    "--isolated",
+]
+command = "npx"

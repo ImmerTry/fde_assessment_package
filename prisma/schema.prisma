@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model WorkItem {
+  id                 String                  @id
+  title              String
+  description        String
+  type               String
+  priority           String
+  status             String
+  assignee           String
+  tags               String                  @default("[]")
+  riskLevel          String                  @default("MEDIUM")
+  acceptanceCriteria String                  @default("[]")
+  clarifications     ClarificationQuestion[]
+  aiAnalyses         AiAnalysis[]
+  statusHistory      StatusHistory[]
+  createdAt          DateTime                @default(now())
+  updatedAt          DateTime                @updatedAt
+
+  @@index([status])
+  @@index([priority])
+  @@index([assignee])
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+
+  @@index([name])
+}
+
+model Assignee {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  avatar    String   @default("")
+  createdAt DateTime @default(now())
+
+  @@index([name])
+}
+
+model ClarificationQuestion {
+  id         String   @id @default(cuid())
+  workItemId String
+  content    String
+  severity   String
+  status     String   @default("OPEN")
+  answer     String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  workItem WorkItem @relation(fields: [workItemId], references: [id], onDelete: Cascade)
+
+  @@index([workItemId])
+  @@index([severity, status])
+}
+
+model AiAnalysis {
+  id                              String   @id @default(cuid())
+  workItemId                      String
+  summary                         String
+  suggestedAcceptanceCriteria     String
+  risks                           String
+  suggestedClarificationQuestions String
+  taskBreakdown                   String
+  provider                        String   @default("mock-rule-service")
+  createdAt                       DateTime @default(now())
+
+  workItem WorkItem @relation(fields: [workItemId], references: [id], onDelete: Cascade)
+
+  @@index([workItemId, createdAt])
+}
+
+model StatusHistory {
+  id         String   @id @default(cuid())
+  workItemId String
+  fromStatus String?
+  toStatus   String
+  actor      String   @default("candidate")
+  reason     String?
+  createdAt  DateTime @default(now())
+
+  workItem WorkItem @relation(fields: [workItemId], references: [id], onDelete: Cascade)
+
+  @@index([workItemId, createdAt])
+}
