@@ -1,9 +1,9 @@
 # Playwright E2E 测试报告
 
-**项目**: FDE AI 辅助工作项看板  
-**测试日期**: 2026-05-27  
-**测试框架**: Playwright v1.60  
-**浏览器**: Chromium (Desktop Chrome)  
+**项目**: FDE AI 辅助工作项看板
+**测试日期**: 2026-05-27
+**测试框架**: Playwright v1.60
+**浏览器**: Chromium (Desktop Chrome)
 **模式**: 全自动化
 
 ---
@@ -23,7 +23,7 @@
 
 ```
 npm run test:e2e:auto
-  → 1. 杀掉旧 dev server (端口 3010)
+  → 1. 杀掉旧 dev server (端口 3000)
   → 2. 重置 SQLite 数据库 (force-reset + seed 24条数据)
   → 3. 启动 Next.js dev server
   → 4. 运行 12 个 Playwright 测试

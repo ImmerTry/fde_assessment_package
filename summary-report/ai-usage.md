@@ -95,21 +95,21 @@ StatusHistory、Tag、Assignee 六个模型。
 
 以下内容完全或主要由 AI 生成：
 
-| 内容              | 文件/目录                                              | 说明                                 |
-| ----------------- | ------------------------------------------------------ | ------------------------------------ |
-| Prisma Schema     | `prisma/schema.prisma`                                 | 6 个模型定义 + 索引 + 级联关系       |
-| 种子数据          | `prisma/seed.ts`                                       | 24 条中文场景数据                    |
-| 类型定义          | `lib/types.ts`                                         | 全部 DTO 和枚举类型                  |
-| 状态机            | `lib/state-machine.ts`                                 | 流转规则、阻断逻辑、常量定义         |
-| 校验器            | `lib/validators.ts`                                    | 5 个 Zod Schema                      |
-| AI 服务           | `lib/ai-service.ts`                                    | Mock 规则引擎                        |
-| 序列化/数据库工具 | `lib/serializers.ts`, `lib/db.ts`, `lib/work-items.ts` | ORM 查询封装和 DTO 转换              |
-| API 路由          | `app/api/*` (9 个文件)                                 | 15 个 REST 端点                      |
-| UI 组件           | `components/ui/*` (14 个)                              | shadcn 基础组件                      |
-| 业务组件          | `components/workspace/*` (9 个)                        | 看板主控、详情面板、状态流、指标卡等 |
-| 单元测试          | `tests/*` (3 个文件)                                   | Vitest 状态机测试                    |
-| E2E 测试          | `e2e/*` (6 个文件)                                     | 12 个 Playwright 用例 + 辅助脚本     |
-| 文档              | `README.md`, `TEST-REPORT.md`, `templates/*`           | 项目说明、测试报告、过程文档         |
+| 内容              | 文件/目录                                                   | 说明                                 |
+| ----------------- | ----------------------------------------------------------- | ------------------------------------ |
+| Prisma Schema     | `prisma/schema.prisma`                                      | 6 个模型定义 + 索引 + 级联关系       |
+| 种子数据          | `prisma/seed.ts`                                            | 24 条中文场景数据                    |
+| 类型定义          | `lib/types.ts`                                              | 全部 DTO 和枚举类型                  |
+| 状态机            | `lib/state-machine.ts`                                      | 流转规则、阻断逻辑、常量定义         |
+| 校验器            | `lib/validators.ts`                                         | 5 个 Zod Schema                      |
+| AI 服务           | `lib/ai-service.ts`                                         | Mock 规则引擎                        |
+| 序列化/数据库工具 | `lib/serializers.ts`, `lib/db.ts`, `lib/work-items.ts`      | ORM 查询封装和 DTO 转换              |
+| API 路由          | `app/api/*` (9 个文件)                                      | 15 个 REST 端点                      |
+| UI 组件           | `components/ui/*` (14 个)                                   | shadcn 基础组件                      |
+| 业务组件          | `components/workspace/*` (9 个)                             | 看板主控、详情面板、状态流、指标卡等 |
+| 单元测试          | `tests/*` (3 个文件)                                        | Vitest 状态机测试                    |
+| E2E 测试          | `e2e/*` (6 个文件)                                          | 12 个 Playwright 用例 + 辅助脚本     |
+| 文档              | `README.md`, `TEST-REPORT.md`, `ai-usage.md, process.md 等` | 项目说明、测试报告、过程文档         |
 
 ---
 

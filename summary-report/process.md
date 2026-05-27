@@ -97,7 +97,7 @@ Assignee (独立元数据)
 
 ### API 设计
 
-统一响应格式 `{ data: T }` / `{ error: { code, message, details? } }`，共 15 个接口（详见 [`api-design-proposal.md`](templates/api-design-proposal.md)）。
+统一响应格式 `{ data: T }` / `{ error: { code, message, details? } }`，共 15 个接口（详见 [`api-design-proposal.md`](api-design-proposal.md)）。
 
 ### 状态设计
 
@@ -118,7 +118,7 @@ Assignee (独立元数据)
 
 ## 5. AI 使用过程
 
-全程使用 Codex（OpenAI GPT-5 编码 Agent）作为主力开发工具。详见 [`ai-usage.md`](templates/ai-usage.md)。
+全程使用 Codex（OpenAI GPT-5 编码 Agent）作为主力开发工具。详见 [`ai-usage.md`](ai-usage.md)。
 
 核心使用模式：
 
@@ -153,7 +153,7 @@ Assignee (独立元数据)
 | `npm run e2e:smoke`     | API 冒烟测试（CRUD → 流转 → 阻断 → 解除阻断 → AI 分析 → 清理）                                                       | 全绿   |
 | `npm run build`         | 生产构建                                                                                                             | 成功   |
 | `npm run lint`          | ESLint                                                                                                               | 无报错 |
-| 手动验证                | 浏览器打开 localhost:3010，逐个走通看板交互：搜索 → 点卡片 → 查看详情 → 流转状态 → 新建 → 编辑 → 删除 → 暗色模式切换 | 正常   |
+| 手动验证                | 浏览器打开 localhost:3000，逐个走通看板交互：搜索 → 点卡片 → 查看详情 → 流转状态 → 新建 → 编辑 → 删除 → 暗色模式切换 | 正常   |
 
 ---
 

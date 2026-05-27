@@ -5,7 +5,7 @@ import path from "node:path"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const PORT = 3010
+const PORT = 3000
 const BASE_URL = `http://localhost:${PORT}`
 
 export default defineConfig({

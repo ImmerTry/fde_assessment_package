@@ -11,7 +11,7 @@ Write-Host "========================================`n" -ForegroundColor Cyan
 
 # 1. 杀掉旧服务
 Write-Host "[1/4] 清理旧 dev server..." -ForegroundColor Yellow
-$existing = netstat -ano 2>$null | Select-String ":3010" | Select-String "LISTENING"
+$existing = netstat -ano 2>$null | Select-String ":3000" | Select-String "LISTENING"
 if ($existing) {
   $pid_match = [regex]::Match($existing, '\s+(\d+)\s*$')
   if ($pid_match.Success) {

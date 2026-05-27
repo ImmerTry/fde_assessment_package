@@ -66,7 +66,7 @@
 npm install
 npm run db:generate
 npm run db:reset        # 重置 SQLite + 填充 24 条种子数据
-npm run dev             # 启动开发服务器 → http://localhost:3010
+npm run dev             # 启动开发服务器 → http://localhost:3000
 ```
 
 ### 可用命令
@@ -223,9 +223,29 @@ pnpm ===> v10.19.0
 
 ---
 
-## 后续方向
+## 自我评价
+
+### 完成情况
+
+核心闭环已完整实现：启动后端 → 打开看板 → 展示工作项 → 查看详情 → 添加澄清问题 → 触发状态流转（含阻断提示） → AI 分析 → 展示结构化结果。题目要求的六阶段状态机、澄清问题阻断规则、非法流转提示、Mock AI 分析均通过了自动化测试验证。
+
+### 加分项实现
+
+拖拽看板、搜索筛选、表单校验、响应式布局、暗色模式、组件测试（Vitest）、E2E 测试（Playwright）、API 类型定义、错误边界、后台日志终端、可替换 AI Service 封装、完整后端服务（Prisma + SQLite）、Docker 部署均已实现。
+
+### 技术取舍
+
+Mock AI Service 而非真实 LLM 是时间约束下的务实选择。lib/ai-service.ts 的单一函数签名确保了替换成本极低：改一个文件、调用 OpenAI-compatible API 即可。未做登录认证和 WebSocket 协作：前者是外围功能，后者在单用户演示场景无必要。前端状态管理采用 useState 而非 React Query，因为变更操作返回完整 WorkItemDTO 使得 upsertItem() 模式比缓存失效更直接。
+
+### 风险
+
+Seed 数据仅 24 条，未验证百条以上的列表渲染性能和 API 响应时间。Playwright 未覆盖拖拽流转的原生浏览器事件（通过右键菜单和 API 层补偿覆盖了流转逻辑）。暗色模式未做 a11y 审计。
+
+### 后续优化方向
 
 - 接入真实 LLM（OpenAI-compatible）
 - 登录认证和权限控制
 - URL 同步筛选条件
 - 负责人维度视图
+- 增量列表更新（摒弃全量替换）
+- 移动端原生拖拽体验优化
